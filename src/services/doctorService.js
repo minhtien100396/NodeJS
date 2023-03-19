@@ -10,6 +10,8 @@ let getTopDoctorHome =  (limitInput) => {
                 attributes: {
                     exclude: ['password']
                 },
+
+                //sau khi thiết lập mối quan hệ thì có thể lây được các trường trong Allcode
                 include: [
                     {model:db.Allcode,as:'positionData',attributes:['valueEn','valueVi']},
                     {model:db.Allcode,as:'genderData',attributes:['valueEn','valueVi']}
