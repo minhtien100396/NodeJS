@@ -11,11 +11,14 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
+            //Mối quan hệ
+            Allcode.hasMany(models.User, {foreignKey:'positionId',as: 'positionData'})
+            Allcode.hasMany(models.User, {foreignKey:'gender',as: 'genderData'})
         }
     };
     Allcode.init({
         // Không cần khai báo primary key
-        key: DataTypes.STRING,
+        keyMap: DataTypes.STRING,
         type: DataTypes.STRING,
         valueEn: DataTypes.STRING,
         valueVi: DataTypes.STRING,
